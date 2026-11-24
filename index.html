@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Портфолио Контент-продюсера, UGC Креатора</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#e8b9c4;--rose:#c9657e;--ink:#2a2226;--beige:#f4ecdf;--script:'Great Vibes',cursive;--sans:'Montserrat',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--pink);font-family:var(--sans);color:var(--ink);padding:clamp(10px,3vw,40px)}
+.notebook{position:relative;max-width:1400px;margin:0 auto;background:#fff;border-radius:6px 14px 14px 6px;box-shadow:0 14px 40px rgba(90,30,50,.28);padding-left:56px;overflow:hidden;
+  background-image:repeating-linear-gradient(#fff 0 31px,#f1e6ea 31px 32px)}
+.spiral{position:absolute;left:0;top:0;bottom:0;width:48px;background:#f1eef0;border-right:1px solid #d8d0d4;
+  background-image:radial-gradient(circle at 24px 14px,#fff 0 6px,#8d8d95 7px 8px,transparent 9px),linear-gradient(90deg,transparent 14px,#c9c9d1 15px 33px,transparent 34px);
+  background-size:48px 34px,48px 34px}
+header{margin:0 0 24px -56px;padding:34px 24px 30px 80px;text-align:center;color:#fff;
+  background-color:#d9a05b;
+  background-image:radial-gradient(ellipse 10px 7px at 20px 20px,#3a2516 0 55%,transparent 60%),radial-gradient(ellipse 9px 6px at 55px 48px,#3a2516 0 55%,transparent 60%),radial-gradient(circle at 18px 20px,#b97a35 0 14px,transparent 15px),radial-gradient(circle at 55px 48px,#b97a35 0 13px,transparent 14px);
+  background-size:70px 70px;border-bottom:4px double #fff}
+header h1{font:400 clamp(2rem,5.5vw,4.2rem)/1.1 var(--script);background:rgba(42,34,38,.72);display:inline-block;padding:.1em .5em;border-radius:10px;transform:rotate(-1.5deg)}
+.tg{display:inline-block;margin-top:16px;padding:8px 22px;border-radius:999px;background:#fff;color:var(--rose);font-weight:600;text-decoration:none;box-shadow:0 3px 0 rgba(0,0,0,.2);transition:transform .2s}
+.tg:hover{transform:translateY(-2px) rotate(2deg)}
+main{padding:0 clamp(12px,2.5vw,32px) 32px 0}
+.grid{display:grid;grid-template-columns:1fr minmax(210px,260px) 1fr;grid-template-areas:"z1 photo z2" "z3 photo z4";gap:28px;align-items:start}
+.z1{grid-area:z1}.z2{grid-area:z2}.z3{grid-area:z3}.z4{grid-area:z4}
+.zone{position:relative;padding:18px;background:rgba(255,255,255,.9);border:1px solid #efd9e0;border-radius:10px}
+.zone::before{content:"📎";position:absolute;top:-14px;right:16px;font-size:1.6rem;transform:rotate(18deg)}
+h2{font:400 clamp(1.6rem,2.6vw,2.2rem)/1.15 var(--script);color:var(--rose);margin-bottom:14px}
+h2::after{content:" ✦";font-size:.7em}
+.photo{grid-area:photo;position:sticky;top:20px;align-self:center;justify-self:center;width:100%;background:#fff;padding:12px 12px 48px;box-shadow:0 8px 22px rgba(0,0,0,.25);transform:rotate(-3deg);border:1px solid #eee}
+.photo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#f2d8df}
+.photo span{position:absolute;bottom:10px;left:0;right:0;text-align:center;font:400 1.6rem var(--script);color:var(--rose)}
+.photo::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:28px;transform:translateX(-50%) rotate(3deg);background:rgba(232,185,196,.85)}
+.star{position:absolute;color:#e6b94d;font-size:2rem;pointer-events:none}
+.s1{top:-18px;left:-14px}.s2{bottom:30px;right:-18px;color:var(--rose)}
+.stats{display:grid;gap:14px}
+.stat figure{background:#fff;border:1px solid #eee;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.stat img{display:block;width:100%;height:auto;background:#f2d8df}
+.stat figcaption,.case figcaption{font-size:.78rem;line-height:1.35;margin-top:6px;color:#555}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;justify-items:center}
+.video{width:160px}
+.video iframe{display:block;width:160px;height:284px;border:0;border-radius:10px;background:#111;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.plate{margin-top:6px;padding:6px 8px;background:#fbe9ee;border-radius:6px;font-size:.72rem;line-height:1.4;font-weight:500}
+.plate b{font-weight:600;color:var(--rose)}
+.archive{margin-top:40px;padding:22px;background-color:var(--beige);background-image:radial-gradient(#e2d4bd 1.2px,transparent 1.2px);background-size:14px 14px;border:2px dashed #b9a688;border-radius:10px}
+.archive h2{font-size:clamp(1.3rem,2vw,1.7rem);color:#8a6d4b}
+.cases{display:flex;flex-wrap:wrap;gap:18px}
+.case{flex:1 1 180px;min-width:0}
+.case img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#e9dfcc;border:6px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+@media(max-width:1000px){
+ .grid{grid-template-columns:1fr;grid-template-areas:"photo" "z1" "z2" "z3" "z4"}
+ .photo{position:relative;top:0;max-width:260px}
+}
+@media(max-width:600px){
+ .notebook{padding-left:30px}.spiral{width:26px;background-size:26px 34px,26px 34px;background-image:radial-gradient(circle at 13px 14px,#fff 0 4px,#8d8d95 5px 6px,transparent 7px)}
+ header{margin-left:-30px;padding-left:44px}
+ main{padding-right:10px}
+ .videos{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+}
+</style>
+</head>
+<body>
+<div class="notebook">
+ <div class="spiral" aria-hidden="true"></div>
+
+ <header>
+  <h1>Портфолио Контент-продюсера, UGC Креатора</h1><br>
+  <a class="tg" href="https://t.me/kateruka" target="_blank" rel="noopener">@kateruka</a>
+ </header>
+
+ <main>
+  <div class="grid">
+
+   <section class="zone z1">
+    <h2>Показатели, статистика</h2>
+    <div class="stats">
+     <div class="stat"><figure><img src="c:\Users\Asus\Documents\images\K6gHFft8vD8Fiy_uNKgf7MMiFIFPfS0BLajvbCDQKi9iPrEly9ODLCB0QYUpqI2pH0GeaSlu2QDikszkqBQ-oGf1.jpg" alt="Охваты и ER"><figcaption>Охваты продуктового аккаунта и показатели ER</figcaption></figure></div>
+     <div class="stat"><figure><img src="c:\Users\Asus\Documents\images\mY-IgQdEhvJ7ZSFGa-UfjYuHwxgJHT9lIDaB9xempbF7594f4-K78RWcbqHAiZqXp3EuRqhNNy1uCosFX7y7Mboa.jpg" alt="Охваты видео команды"><figcaption>Охватные видео на команду креаторов за месяц</figcaption></figure></div>
+     <div class="stat"><figure><img src="c:\Users\Asus\Documents\images\pEajnYPYtDwIPfQCHc9AUCdtpv0ME8-7auqNxjKQPDgiXUavqKPg1IbsrRRT353yNTGssuuxG9D9rmCaGwTwNTIC.jpg" alt="Развитие аккаунта"><figcaption>Работа над развитием продуктового аккаунта за первые 3 месяца, статистика</figcaption></figure></div>
+    </div>
+   </section>
+
+   <figure class="photo">
+    <span class="star s1" aria-hidden="true">★</span><span class="star s2" aria-hidden="true">✦</span>
+    <img src="c:\Users\Asus\Documents\images\nijTYaSZE6MfoFmLHOA7KpEO0c8Qzhp3RtRhYtghFhzgm_GqTtAtTtDJGaGNhsSLvswGs3xVMN8J3DEZJqBgdkyq.jpg" alt="Моё фото">
+    <span>KateRuka</span>
+   </figure>
+
+   <section class="zone z2">
+    <h2>Личные продуктовые видео как креатора и сценариста</h2>
+    <div class="videos">
+     <div class="video"><iframe src="https://www.tiktok.com/@kateaboutstudy/video/7695198225090891016?_r=1&_t=ZS-9BgH9IRGqAc" allow="autoplay; encrypted-media" loading="lazy" title="Видео 1"></iframe><div class="plate">Охват: <b>237 300</b><br>Вовлеченность: <b>20,9%</b></div></div>
+     <div class="video"><iframe src="https://www.tiktok.com/@kateaboutstudy/video/7711092450298776850?_r=1&_t=ZS-9BgHBnq6Wgh" allow="autoplay; encrypted-media" loading="lazy" title="Видео 2"></iframe><div class="plate">Охват: <b>165 500</b><br>Вовлеченность: <b>17,3%</b></div></div>
+     <div class="video"><iframe src="https://www.tiktok.com/@kateaboutstudy/video/7711038739358797064?_r=1&_t=ZS-9BgHBDuhUNr" allow="autoplay; encrypted-media" loading="lazy" title="Видео 3"></iframe><div class="plate">Охват: <b>38 000</b><br>Вовлеченность: <b>18,7%</b></div></div>
+     <div class="video"><iframe src="https://www.tiktok.com/@kateaboutstudy/video/7705845538045955335?_r=1&_t=ZS-9BgHCiBlrCU" allow="autoplay; encrypted-media" loading="lazy" title="Видео 4"></iframe><div class="plate">Охват: <b>130 300</b><br>Вовлеченность: <b>19,6%</b></div></div>
+     <div class="video"><iframe src="https://www.instagram.com/reel/DejkubCu20i/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Видео 5"></iframe><div class="plate">Охват: <b>82 121</b><br>Вовлеченность: <b>5,28%</b></div></div>
+     <div class="video"><iframe src="https://www.instagram.com/reel/DcKE9ZmiCPF/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Видео 6"></iframe><div class="plate">Охват: <b>43 528</b><br>Вовлеченность: <b>10,6%</b></div></div>
+     <div class="video"><iframe src="https://www.instagram.com/reel/DdFVI-FiFCU/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Видео 7"></iframe><div class="plate">Охват: <b>39 570</b><br>Вовлеченность: <b>5,8%</b></div></div>
+    </div>
+   </section>
+
+   <section class="zone z3">
+    <h2>Видео креаторов из моей команды, сделанные по моим референсам и сценариям</h2>
+    <div class="videos">
+     <div class="video"><iframe src="https://www.instagram.com/reel/DcqLZg8IbPE/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Видео команды 1"></iframe><div class="plate">Охват: <b>126 000</b><br>Вовлеченность: <b>4,8</b></div></div>
+     <div class="video"><iframe src="https://www.instagram.com/reel/Dcu4_tyohlP/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Видео команды 2"></iframe><div class="plate">Охват: <b>124 000</b><br>Вовлеченность: <b>6,1%</b></div></div>
+     <div class="video"><iframe src="https://www.instagram.com/reel/DfT-yPZuz2j/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Видео команды 3"></iframe><div class="plate">Охват: <b>30 000</b><br>Вовлеченность: <b>5,2%</b></div></div>
+     <div class="video"><iframe src="https://www.tiktok.com/@lika.k9/video/7705518791609912598?_r=1&_t=ZS-9BgH2QOmazU" allow="autoplay; encrypted-media" loading="lazy" title="Видео команды 4"></iframe><div class="plate">Охват: <b>444 000</b><br>Вовлеченность: <b>30,9%</b></div></div>
+     <div class="video"><iframe src="https://www.tiktok.com/@lika.k9/video/7685060586098445590?_r=1&_t=ZS-9BgH5fZa0kp" allow="autoplay; encrypted-media" loading="lazy" title="Видео команды 5"></iframe><div class="plate">Охват: <b>77 200</b><br>Вовлеченность: <b>25,6%</b></div></div>
+    </div>
+   </section>
+
+   <section class="zone z4">
+    <h2>Разговорные видео моего личного аккаунта по инфоповодам</h2>
+    <div class="videos">
+     <div class="video"><iframe src="https://www.instagram.com/reel/DXp6myaitgE/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Разговорное видео 1"></iframe><div class="plate">Охват: <b>190 058</b><br>Вовлеченность: <b>4,7%</b></div></div>
+     <div class="video"><iframe src="https://www.instagram.com/reel/Df2dvp8Kysh/embed/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Разговорное видео 2"></iframe><div class="plate">Охват: <b>335 906</b><br>Вовлеченность: <b>5,2%</b></div></div>
+     <div class="video"><iframe src="https://vm.tiktok.com/ZGdXKXnhM/?autoplay=1&muted=1" allow="autoplay; encrypted-media" loading="lazy" title="Разговорное видео 3"></iframe><div class="plate">Охват: <b>212 000</b><br>Вовлеченность: <b>8,7%</b></div></div>
+     <div class="video"><iframe src="https://www.tiktok.com/@katerukatalk/video/7698513678479396129?_r=1&_t=ZG-9BgHgqR0cYT" allow="autoplay; encrypted-media" loading="lazy" title="Разговорное видео 4"></iframe><div class="plate">Охват: <b>54 000</b><br>Вовлеченность: <b>9,1%</b></div></div>
+    </div>
+   </section>
+
+  </div>
+
+  <section class="archive">
+   <h2>Старые проекты и кейсы</h2>
+   <div class="cases">
+    <figure class="case"><img src="c:\Users\Asus\Documents\images\youtybe1.jpg" alt="Кейс YouTube"><figcaption>YouTube-продюсирование образовательного аккаунта</figcaption></figure>
+    <figure class="case"><img src="c:\Users\Asus\Documents\images\case2.jpg" alt="Кейс детского бренда"><figcaption>Продюсирование аккаунта детского бренда</figcaption></figure>
+    <figure class="case"><img src="c:\Users\Asus\Documents\images\tFCwoiLQSL8QDc-mSa6AgDe4JMRrQ6Z2pE_rR9dJI0p3SHOgZaKsOuLALeowVPWSXp51udBfgI-d4mD12Skbd9EQ.jpg" alt="Кейс 3"><figcaption>Продюсирование аккаунта детского бренда</figcaption></figure>
+    <figure class="case"><img src="c:\Users\Asus\Documents\images\youtube2.jpg" alt="Кейс 4"><figcaption>YouTube-продюсирование в нише психологии</figcaption></figure>
+   </div>
+  </section>
+ </main>
+</div>
+</body>
+</html>
